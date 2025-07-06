@@ -1,35 +1,110 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./App.css";
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+// React Components
+import Header from "./components/Header";
+
+import MyHeader from "./components/MyHeader";
+
+import LeftNav from "./components/Leftnav";
+
+import PostButton from "./components/PostButton";
+
+import MyForm from "./components/MyForm";
+
+import MyAds from "./components/MyAds";
+
+import ComponentMeme from "./images/ComponentMeme.webp";
+
+// import images
+import AvatarIcon from "./images/Avatar-Photo.jpg";
+import MyAvatar from "./components/MyAvatar";
+import AdPhoto from "./images/acmead.jpg";
+import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
+
+// REACT ICONS
+
+import { FcSettings } from "react-icons/fc";
+import { FaSearch } from "react-icons/fa";
+import { CgBoy } from "react-icons/cg";
+import MyPostCard from "./components/MyPostCard";
+
+class App extends Component {
+  render() {
+    return (
+      <>
+        {/* <Header /> */}
+        <div>
+          <MyHeader />
+        </div>
+
+        {/* Leftnav */}
+        <main style={mainStyle.style}>
+          <section style={navStyles.container}>
+            <LeftNav />
+          </section>
+          {/* Post Card Section */}
+          <section style={formStyles.style}>
+            <MyForm />
+            <MyPostCard ImgUrl={ComponentMeme} ImgAlt="Component Meme" />
+            {/* <PostButton btnText="Post Something" />
+            <div></div> */}
+          </section>
+
+          <div style={asideStyle.style}>
+            <aside>
+              <MyAds
+                AdImg={AdPhoto}
+                AdTitle="MEAT Sales!"
+                AdDescription="Please buy our stuff before we go out of business!"
+                AdAlt="Acme Ad"
+              />
+
+              <MyAds
+                AdImg={AcmeCoffeeAd}
+                AdTitle="Gourmet Coffee!"
+                AdDescription="Coffee to please any grumpy husband..Lye Sold seperately!"
+                AdAlt="Acme Ad"
+              />
+            </aside>
+          </div>
+        </main>
+      </>
+    );
+  }
 }
 
-export default App
+export default App;
+
+//simplify style variables into one "styles" then nest each components styles
+
+const mainStyle = {
+  style: {
+    display: "flex",
+    flexDirection: "row",
+  },
+};
+
+const asideStyle = {
+  style: {
+    width: "20%",
+  },
+};
+
+const formStyles = {
+  style: {
+    width: "60%",
+    backgroundColor: "lightgrey",
+  },
+};
+
+const navStyles = {
+  container: {
+    // display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    height: "100vh",
+    width: "20%",
+  },
+};
