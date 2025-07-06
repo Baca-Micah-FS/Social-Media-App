@@ -94,6 +94,7 @@ const mainStyle = {
 const asideStyle = {
   style: {
     width: "20%",
+    backgroundColor: "#e0e1dd",
   },
 };
 

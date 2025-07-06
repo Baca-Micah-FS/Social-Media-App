@@ -2,14 +2,18 @@
 
 coolors.com color pallete
 
---primary-colors: #0d1b2a (Nav font, headers, inputs, Ads)
+--primary-colors: #0d1b2a (Nav font, headers, Ads font)
+
+--secondary-colors: #e0e1dd(ad background color, post inputs) 
 
 --accent-color: rgba(163, 173, 194) (box shadowing)
+                
 
 --button/icon-color: #778da9 (button, icon, and class chat header)
 
 Fonts: Open Sans(Nav headers inputs, Ad Descriptions)
-Roboto(Ad Title)
+        
+        Roboto(Ad Title)
 */
 
 :root {

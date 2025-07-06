@@ -17,6 +17,7 @@ const styles = {
     width: "90%",
     cursor: "pointer",
     marginLeft: "5%",
+    marginTop: "15px",
   },
   adTitle: {
     fontSize: "30px",
