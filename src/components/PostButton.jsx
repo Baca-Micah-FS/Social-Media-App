@@ -13,7 +13,7 @@ export default PostButton;
 
 const styles = {
   btnStyles: {
-    backgroundColor: "darkgrey",
+    backgroundColor: "#778da9",
     color: "white",
     fontWeight: "bold",
     padding: "10px 50px",

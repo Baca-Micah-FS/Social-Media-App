@@ -14,7 +14,7 @@ import { PiPencilCircleFill } from "react-icons/pi";
 const MyForm = (props) => {
   return (
     <form style={styles.myForm}>
-      <input style={styles.postInput} placeholder="Create Post"></input>
+      <input style={styles.postInput} placeholder="Post Title"></input>
       <br></br>
 
       <div style={styles.formLineTwo}>
@@ -56,13 +56,15 @@ const styles = {
     fontSize: "1rem",
     fontWeight: "bold",
     marginTop: "10px",
+    fontFamily: "Open Sans",
   },
   descriptionInput: {
     border: "none",
     fontSize: "1rem",
     width: "85%",
     marginLeft: "20px",
-    fontSize: "17px",
+    fontSize: "19px",
+    marginTop: "9px",
   },
 
   formLineTwo: {
@@ -70,7 +72,7 @@ const styles = {
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
-    marginLeft: ".9rem",
+    marginLeft: ".5rem",
     marginTop: "1rem",
   },
   avatarAndInput: {
@@ -80,5 +82,6 @@ const styles = {
   },
   button: {
     border: "none",
+    backgroundColor: "white",
   },
 };

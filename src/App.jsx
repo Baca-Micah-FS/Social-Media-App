@@ -36,18 +36,23 @@ class App extends Component {
       <>
         {/* <Header /> */}
         <div>
-          <MyHeader />
+          <MyHeader classChat="classChat" />
         </div>
 
         {/* Leftnav */}
         <main style={mainStyle.style}>
           <section style={navStyles.container}>
-            <LeftNav />
+            <LeftNav NewsFeed="NewsFeed" Messages="Messages" Watch="Watch" />
           </section>
           {/* Post Card Section */}
           <section style={formStyles.style}>
             <MyForm />
-            <MyPostCard ImgUrl={ComponentMeme} ImgAlt="Component Meme" />
+            <MyPostCard
+              PostDescription="If you look closely, developing is still in your future."
+              CardHeader="Interface Programming"
+              ImgUrl={ComponentMeme}
+              ImgAlt="Component Meme"
+            />
             {/* <PostButton btnText="Post Something" />
             <div></div> */}
           </section>
@@ -57,14 +62,14 @@ class App extends Component {
               <MyAds
                 AdImg={AdPhoto}
                 AdTitle="MEAT Sales!"
-                AdDescription="Please buy our stuff before we go out of business!"
+                AdDescription="Deals of a lifetime!"
                 AdAlt="Acme Ad"
               />
 
               <MyAds
                 AdImg={AcmeCoffeeAd}
                 AdTitle="Gourmet Coffee!"
-                AdDescription="Coffee to please any grumpy husband..Lye Sold seperately!"
+                AdDescription="Coffee to please any grumpy husband..!"
                 AdAlt="Acme Ad"
               />
             </aside>

@@ -5,7 +5,7 @@ const MyAds = (props) => {
     <div>
       <img src={props.AdImg} alt={props.AdAlt} style={styles.myAds} />
       <h1 style={styles.adTitle}>{props.AdTitle}</h1>
-      <small style={styles.adDescription}>{props.AdDescription}</small>
+      <p style={styles.adDescription}>{props.AdDescription}</p>
     </div>
   );
 };
@@ -20,8 +20,15 @@ const styles = {
   },
   adTitle: {
     fontSize: "30px",
+    fontFamily: "Roboto",
+    paddingLeft: "10px",
+    marginLeft: "10px",
   },
   adDescription: {
-    fontSize: "15px",
+    fontSize: "18px",
+    fontFamily: "Roboto",
+    fontStyle: "italic",
+    paddingLeft: "10px",
+    marginLeft: "10px",
   },
 };

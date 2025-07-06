@@ -32,7 +32,7 @@ const MyHeader = (props) => {
         <div style={styles.logo}>
           <PiPencilCircleFill style={styles.logo} />
         </div>
-        <h1>classChat</h1>
+        <h1>{props.classChat}</h1>
       </div>
       <div style={styles.searchCont}>
         <span style={styles.inputIcon}>
@@ -47,8 +47,9 @@ const MyHeader = (props) => {
         <button style={styles.rightIcons}>
           <FcSettings size={25} />
         </button>
-        <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
-        {/* <CgBoy /> */}
+        <div style={styles.myIcon}>
+          <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
+        </div>
       </div>
     </header>
   );
@@ -65,11 +66,11 @@ const styles = {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    boxShadow: "1px 6px 1px 1px rgba(0, 0, 225, .1)",
   },
   left: {
     display: "flex",
     flexDirection: "row",
+    color: "#778da9",
   },
   logo: {
     borderRadius: "50%",
@@ -80,6 +81,7 @@ const styles = {
     alignItems: "center",
     paddingTop: ".3rem",
     // marginTop: ".55rem",
+    color: "#778da9",
   },
   searchCont: {
     border: "1px solid #ddd",
@@ -113,5 +115,9 @@ const styles = {
     display: "flex",
     margin: ".5rem",
     width: "50%",
+  },
+  myIcon: {
+    marginLeft: "11px",
+    marginTop: "8px",
   },
 };

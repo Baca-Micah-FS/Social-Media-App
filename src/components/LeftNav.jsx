@@ -1,21 +1,21 @@
-const LeftNav = () => {
+const LeftNav = (props) => {
   return (
     <header style={style.header}>
       <ul style={style.lists}>
         <div style={style.lists}>
           <li>
             <a style={style.lists} href="#newsFeed">
-              News Feed
+              {props.NewsFeed}
             </a>
           </li>
           <li>
             <a style={style.lists} href="#messages">
-              Messages
+              {props.Messages}
             </a>
           </li>
           <li>
             <a style={style.lists} href="#watch">
-              Watch
+              {props.Watch}
             </a>
           </li>
         </div>
@@ -30,9 +30,12 @@ const style = {
   header: {
     lineHeight: "3.5rem",
     fontSize: "1.1rem",
+    color: "#0d1b2a",
   },
   lists: {
     listStyleType: "none",
-    color: "red",
+    color: "#0d1b2a",
+    fontFamily: "Open Sans",
+    fontWeight: "bold",
   },
 };

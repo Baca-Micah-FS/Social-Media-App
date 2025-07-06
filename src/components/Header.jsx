@@ -2,11 +2,7 @@
 // CHild component: Header.jsx
 
 const Header = () => {
-  return (
-    <header style={headerStyle.header}>
-      <h1>classChat</h1>
-    </header>
-  );
+  return <header style={headerStyle.header}></header>;
 };
 
 export default Header;
