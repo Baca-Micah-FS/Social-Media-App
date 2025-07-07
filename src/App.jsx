@@ -36,7 +36,7 @@ class App extends Component {
       <>
         {/* <Header /> */}
         <div>
-          <MyHeader classChat="classChat" />
+          <MyHeader classChat="classChat" iconName="Micah Baca" />
         </div>
 
         {/* Leftnav */}

@@ -94,6 +94,7 @@ const styles = {
   postDescription: {
     color: "#0d1b2a",
     fontSize: "17px",
+    marginLeft: "10px",
   },
   button2: {
     backgroundColor: "white",

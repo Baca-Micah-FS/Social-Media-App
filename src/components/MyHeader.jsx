@@ -40,16 +40,20 @@ const MyHeader = (props) => {
         </span>
         <input type="text" style={styles.inputwithIcon} placeholder="Search" />
       </div>
+
       <div style={styles.rightSide}>
+        <div style={styles.myIcon}>
+          <div style={styles.iconAvatar}>
+            <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
+          </div>
+          <h3>{props.iconName}</h3>
+        </div>
         <button style={styles.rightIcons}>
           <IoIosNotifications size={25} />
         </button>
         <button style={styles.rightIcons}>
           <FcSettings size={25} />
         </button>
-        <div style={styles.myIcon}>
-          <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
-        </div>
       </div>
     </header>
   );
@@ -114,10 +118,16 @@ const styles = {
   rightIcons: {
     display: "flex",
     margin: ".5rem",
-    width: "50%",
   },
   myIcon: {
+    display: "flex",
+    justifyContent: "space-around",
     marginLeft: "11px",
     marginTop: "8px",
+    color: "white",
+    fontSize: "12px",
+  },
+  iconAvatar: {
+    marginRight: "10px",
   },
 };
