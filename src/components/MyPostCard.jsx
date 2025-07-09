@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 import MyIcon from "./MyIcons";
 
@@ -12,7 +12,7 @@ import { MdEdit } from "react-icons/md";
 
 const MyPostCard = (props) => {
   return (
-    <div>
+    // <div>
       <form style={styles.myForm}>
         <div style={styles.formLineTwo}>
           <div style={styles.avatarAndInput}>
@@ -31,7 +31,7 @@ const MyPostCard = (props) => {
         <p style={styles.postDescription}>{props.PostDescription}</p>
         <img src={props.ImgUrl} alt={props.ImageAlt}></img>
       </form>
-    </div>
+    // </div>
   );
 };
 

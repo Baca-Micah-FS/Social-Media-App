@@ -11,7 +11,7 @@ import { CgBoy } from "react-icons/cg";
 //<PiPencilCircleFill />
 import { PiPencilCircleFill } from "react-icons/pi";
 
-const MyForm = (props) => {
+const MyForm = () => {
   return (
     <form style={styles.myForm}>
       <input style={styles.postInput} placeholder="Post Title"></input>
@@ -63,7 +63,7 @@ const styles = {
     fontSize: "1rem",
     width: "85%",
     marginLeft: "20px",
-    fontSize: "19px",
+    // fontSize: "19px",
     marginTop: "9px",
   },
 
