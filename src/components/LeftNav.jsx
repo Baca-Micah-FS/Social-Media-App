@@ -1,6 +1,6 @@
 const LeftNav = (props) => {
   return (
-    <header style={style.header}>
+    <nav style={style.header}>
       <ul style={style.lists}>
         <div style={style.lists}>
           <li>
@@ -20,7 +20,7 @@ const LeftNav = (props) => {
           </li>
         </div>
       </ul>
-    </header>
+    </nav>
   );
 };
 

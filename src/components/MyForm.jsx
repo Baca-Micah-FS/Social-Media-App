@@ -10,20 +10,65 @@ import { CgBoy } from "react-icons/cg";
 
 //<PiPencilCircleFill />
 import { PiPencilCircleFill } from "react-icons/pi";
+import MyPostCard from "./MyPostCard";
 
-const MyForm = (props) => {
+const MyForm = () => {
+  // state = {
+  //   // Get the value from the input field
+  //   databinding: "",
+  // };
+
+  // Create function for input value
+  // changeInputText = (e) => {
+  //   this.setState({ databinding: e.target.value });
+  // };
+
+  // Create function for Add feature
+  // addItem = (e) => {
+  //   e.preventDefault();
+  //   this.setState({databinding: [...this.state.gList, (gName: this.state.gName)]}
+  //   e.target.reset()
+  // );
+  // };
+
+  // Create delete function
+  // removeItem= key => {
+  //   const newList = [...this.state.gList]
+  //   newList.splice(key, 1)
+  //   this.setState(() => ({
+  //     gList: newList
+
+  // }))
+  // }
+
+  // NOTE MOST OF THIS WAS SHOWN IN THE APP.JSX FILE
+
+  // render() {
+  //   let myList = this.state.gList.map((element, i) => {
+  //     return <MyPostCard key = {i} val={element} delMe = {() => this.removeItem(i)} />
+  //   })
+  // }
+
   return (
     <form style={styles.myForm}>
-      <input style={styles.postInput} placeholder="Post Title"></input>
+      <input
+        type="text"
+        style={styles.postInput}
+        // onChange={this.changeInputText}
+        placeholder="Post Title"
+      ></input>
       <br></br>
 
       <div style={styles.formLineTwo}>
         <div style={styles.avatarAndInput}>
           <MyIcons IconImg={ImageUrl} ImageAlt="Avatar Image Icon" />
           <input
+            type="text"
             style={styles.descriptionInput}
+            // onChange={this.changeInputText}
             placeholder="What did you learn this week?"
           ></input>
+          {/* <p>Post: {this.state.databinding}</p> */}
         </div>
         <div style={styles.button}>
           <PostButton btnText="Post" />
@@ -60,10 +105,9 @@ const styles = {
   },
   descriptionInput: {
     border: "none",
-    fontSize: "1rem",
     width: "85%",
     marginLeft: "20px",
-    fontSize: "19px",
+    // fontSize: "19px",
     marginTop: "9px",
   },
 
