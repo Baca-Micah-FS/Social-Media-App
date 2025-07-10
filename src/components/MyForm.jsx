@@ -12,7 +12,7 @@ import { CgBoy } from "react-icons/cg";
 import { PiPencilCircleFill } from "react-icons/pi";
 import MyPostCard from "./MyPostCard";
 
-const MyForm = (props) => {
+const MyForm = () => {
   // state = {
   //   // Get the value from the input field
   //   databinding: "",
@@ -107,7 +107,7 @@ const styles = {
     border: "none",
     width: "85%",
     marginLeft: "20px",
-    fontSize: "19px",
+    // fontSize: "19px",
     marginTop: "9px",
   },
 

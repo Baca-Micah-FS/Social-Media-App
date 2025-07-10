@@ -1,44 +1,32 @@
 import React, { Component } from "react";
-
 import "./App.css";
-
 // React Components
-import Header from "./components/Header";
-
+// import Header from "./components/Header";
 import MyHeader from "./components/MyHeader";
-
 import LeftNav from "./components/Leftnav";
-
-import PostButton from "./components/PostButton";
-
+// import PostButton from "./components/PostButton";
 import MyForm from "./components/MyForm";
-
 import MyAds from "./components/MyAds";
-
 import ComponentMeme from "./images/ComponentMeme.webp";
+import MyPostCard from "./components/MyPostCard";
 
 // import images
-import AvatarIcon from "./images/Avatar-Photo.jpg";
-import MyAvatar from "./components/MyAvatar";
+// import AvatarIcon from "./images/Avatar-Photo.jpg";
+// import MyAvatar from "./components/MyAvatar";
 import AdPhoto from "./images/acmead.jpg";
 import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
 
 // REACT ICONS
-
-import { FcSettings } from "react-icons/fc";
-import { FaSearch } from "react-icons/fa";
-import { CgBoy } from "react-icons/cg";
-import MyPostCard from "./components/MyPostCard";
+// import { FcSettings } from "react-icons/fc";
+// import { FaSearch } from "react-icons/fa";
+// import { CgBoy } from "react-icons/cg";
 
 class App extends Component {
   render() {
     return (
       <>
         {/* <Header /> */}
-        <div>
-          <MyHeader classChat="classChat" iconName="Micah Baca" />
-        </div>
-
+        <MyHeader classChat="classChat" iconName="Micah Baca" />
         {/* Leftnav */}
         <main style={mainStyle.style}>
           <section style={navStyles.container}>
@@ -65,7 +53,6 @@ class App extends Component {
                 AdDescription="Deals of a lifetime!"
                 AdAlt="Acme Ad"
               />
-
               <MyAds
                 AdImg={AcmeCoffeeAd}
                 AdTitle="Gourmet Coffee!"
