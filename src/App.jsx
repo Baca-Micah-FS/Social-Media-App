@@ -9,6 +9,7 @@ import MyForm from "./components/MyForm";
 import MyAds from "./components/MyAds";
 import ComponentMeme from "./images/ComponentMeme.webp";
 import MyPostCard from "./components/MyPostCard";
+import AvatarImg from "./images/Avatar-Photo.jpg";
 
 // import images
 // import AvatarIcon from "./images/Avatar-Photo.jpg";
@@ -22,6 +23,40 @@ import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
 // import { CgBoy } from "react-icons/cg";
 
 class App extends Component {
+  state = {
+    postList: [
+      {
+        avatar: AvatarImg,
+        postName: "Interface Programming",
+        postDescription:
+          "If you look closely, developing is still in your future.",
+      },
+    ],
+  };
+
+  addItem = (postName, postDescription) => {
+    this.setState({
+      postList: [
+        ...this.state.postList,
+        { avatar: AvatarImg, postName, postDescription },
+      ],
+    });
+  };
+
+  removeItem = (postName, postDescription) => {
+    this.setState({
+      postList: this.state.postList.filter((post) => {
+        if (
+          post.postName !== postName &&
+          post.postDescription !== postDescription
+        ) {
+          return true;
+        }
+        return false;
+      }),
+    });
+  };
+
   render() {
     return (
       <>
@@ -34,13 +69,19 @@ class App extends Component {
           </section>
           {/* Post Card Section */}
           <section style={formStyles.style}>
-            <MyForm />
-            <MyPostCard
-              PostDescription="If you look closely, developing is still in your future."
-              CardHeader="Interface Programming"
-              ImgUrl={ComponentMeme}
-              ImgAlt="Component Meme"
-            />
+            <MyForm addFunction={this.addItem} />
+            {this.state.postList.map((item) => {
+              return (
+                <MyPostCard
+                  PostDescription={item.postDescription}
+                  CardHeader={item.postName}
+                  avatarImage={item.avatar}
+                  key={`${item.postName}-${item.postDescription}`}
+                  removeItem={this.removeItem}
+                />
+              );
+            })}
+
             {/* <PostButton btnText="Post Something" />
             <div></div> */}
           </section>

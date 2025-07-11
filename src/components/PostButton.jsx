@@ -2,7 +2,7 @@
 
 const PostButton = (props) => {
   return (
-    <button style={styles.btnStyles}>
+    <button style={styles.btnStyles} type="submit">
       {props.btnText}
       {props.btnIcon}
     </button>

@@ -13,24 +13,30 @@ import { MdEdit } from "react-icons/md";
 const MyPostCard = (props) => {
   return (
     // <div>
-      <form style={styles.myForm}>
-        <div style={styles.formLineTwo}>
-          <div style={styles.avatarAndInput}>
-            <MyIcon IconImg={ImageUrl} ImageAlt="Image Icon" />
+    <form style={styles.myForm}>
+      <div style={styles.formLineTwo}>
+        <div style={styles.avatarAndInput}>
+          <MyIcon IconImg={props.avatarImage} ImageAlt="Image Icon" />
 
-            {/* CHANGE FONT SIZE, COLOR PALLETS, PADDING TO ADS AND EDIT BUTTON */}
-            <h3 style={styles.postCardHeader}>{props.CardHeader}</h3>
-          </div>
-          <button style={styles.button}>
-            <MdEdit style={styles.button2} />
-          </button>
-          <button style={styles.button}>
-            <TiDelete style={styles.button} />
-          </button>
+          {/* CHANGE FONT SIZE, COLOR PALLETS, PADDING TO ADS AND EDIT BUTTON */}
+          <h3 style={styles.postCardHeader}>{props.CardHeader}</h3>
         </div>
-        <p style={styles.postDescription}>{props.PostDescription}</p>
-        <img src={props.ImgUrl} alt={props.ImageAlt}></img>
-      </form>
+        <button type="button" style={styles.button}>
+          <MdEdit style={styles.buttonIcon} />
+        </button>
+        <button
+          onClick={() =>
+            props.removeItem(props.CardHeader, props.PostDescription)
+          }
+          type="button"
+          style={styles.button}
+        >
+          <TiDelete style={styles.buttonIcon} />
+        </button>
+      </div>
+      <p style={styles.postDescription}>{props.PostDescription}</p>
+      {/* <img src={props.ImgUrl} alt={props.ImageAlt}></img> */}
+    </form>
     // </div>
   );
 };
@@ -80,11 +86,12 @@ const styles = {
     width: "80%",
     alignItems: "center",
   },
+  buttonIcon: {
+    width: "28px",
+    height: "28px",
+  },
   button: {
     backgroundColor: "white",
-    height: "25px",
-    width: "25px",
-    marginBottom: "2.5rem",
   },
   postCardHeader: {
     marginLeft: "15px",
@@ -95,12 +102,5 @@ const styles = {
     color: "#0d1b2a",
     fontSize: "17px",
     marginLeft: "10px",
-  },
-  button2: {
-    backgroundColor: "white",
-    height: "25px",
-    width: "25px",
-    marginBottom: "2rem",
-    marginLeft: "50px",
   },
 };
