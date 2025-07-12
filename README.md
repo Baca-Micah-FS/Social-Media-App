@@ -11,3 +11,11 @@ Will continue to make changes to polish padding, fontsizes and colors, aligning 
 In future weeks will add funcitonality, and button accesisbility.
 
 Polished up beginning of Apllication making everything more consistent.
+
+# Week 2
+
+Added edit, delete, and discard/save post changes.
+
+Cleaned up styling and blank spaces in code.
+
+Cleaned up unused componenets and/or icons
