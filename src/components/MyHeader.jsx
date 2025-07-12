@@ -1,6 +1,4 @@
 import React from "react";
-// import AvatarIcon from "./images/Avatar-Photo.jpg";
-// import MyAvatar from "./components/MyAvatar";
 
 import ImageUrl from "../images/Avatar-Photo.jpg";
 
@@ -23,11 +21,82 @@ import { PiPencilCircleFill } from "react-icons/pi";
 
 //<FcSettings />
 import { FcSettings } from "react-icons/fc";
-// import MyAvatar from "./MyAvatar";
 
 const MyHeader = (props) => {
+  const styles = {
+    myHeader: {
+      padding: "14",
+      backgroundColor: props.HeaderBackgroundColor,
+      color: "rgb(163, 173, 194)",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    left: {
+      display: "flex",
+      flexDirection: "row",
+      color: "#778da9",
+      minWidth: "400px",
+    },
+    logo: {
+      borderRadius: "50%",
+      height: "100px",
+      width: "100px",
+      marginRight: "10%",
+      // backgroundColor: "white",
+      alignItems: "center",
+      paddingTop: ".3rem",
+      // marginTop: ".55rem",
+      color: "#778da9",
+    },
+    searchCont: {
+      border: "1px solid #ddd",
+      display: "flex",
+      flexDirection: "row",
+      borderRadius: "2px",
+      width: "40%",
+      marginRight: "4rem",
+    },
+    inputIcon: {
+      background: "#ddd",
+      padding: "10px",
+      display: "flex",
+      alignItems: "center",
+      fontSize: "1rem",
+    },
+    inputwithIcon: {
+      border: "none",
+      flex: 1,
+      padding: "10px",
+    },
+    rightSide: {
+      display: "flex",
+
+      flexDirection: "row",
+
+      alignItems: "center",
+      marginRight: "2%",
+    },
+    rightIcons: {
+      display: "flex",
+      margin: ".5rem",
+    },
+    myIcon: {
+      display: "flex",
+      justifyContent: "space-around",
+      marginLeft: "11px",
+      marginTop: "8px",
+      color: "white",
+      fontSize: "12px",
+    },
+    iconAvatar: {
+      marginRight: "10px",
+    },
+  };
+
   return (
-    <header style={styles.myHeader}>
+    <header id="headerBackground" style={styles.myHeader}>
       <div style={styles.left}>
         <div style={styles.logo}>
           <PiPencilCircleFill style={styles.logo} />
@@ -60,74 +129,3 @@ const MyHeader = (props) => {
 };
 
 export default MyHeader;
-
-const styles = {
-  myHeader: {
-    padding: "14",
-    backgroundColor: "black",
-    color: "rgb(163, 173, 194)",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  left: {
-    display: "flex",
-    flexDirection: "row",
-    color: "#778da9",
-  },
-  logo: {
-    borderRadius: "50%",
-    height: "100px",
-    width: "100px",
-    marginRight: "10%",
-    // backgroundColor: "white",
-    alignItems: "center",
-    paddingTop: ".3rem",
-    // marginTop: ".55rem",
-    color: "#778da9",
-  },
-  searchCont: {
-    border: "1px solid #ddd",
-    display: "flex",
-    flexDirection: "row",
-    borderRadius: "2px",
-    width: "40%",
-    marginRight: "4rem",
-  },
-  inputIcon: {
-    background: "#ddd",
-    padding: "10px",
-    display: "flex",
-    alignItems: "center",
-    fontSize: "1rem",
-  },
-  inputwithIcon: {
-    border: "none",
-    flex: 1,
-    padding: "10px",
-  },
-  rightSide: {
-    display: "flex",
-
-    flexDirection: "row",
-
-    alignItems: "center",
-    marginRight: "2%",
-  },
-  rightIcons: {
-    display: "flex",
-    margin: ".5rem",
-  },
-  myIcon: {
-    display: "flex",
-    justifyContent: "space-around",
-    marginLeft: "11px",
-    marginTop: "8px",
-    color: "white",
-    fontSize: "12px",
-  },
-  iconAvatar: {
-    marginRight: "10px",
-  },
-};

@@ -14,6 +14,7 @@ import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
 
 class App extends Component {
   state = {
+    headerBackgroundColor: "darkgrey",
     postList: [
       {
         id: 1,
@@ -98,11 +99,23 @@ class App extends Component {
     this.setState({ postList: discardUpdate });
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        headerBackgroundColor: "black",
+        postList: this.state.postList,
+      });
+    }, 1500);
+  }
   render() {
     return (
       <>
         {/* <Header /> */}
-        <MyHeader classChat="classChat" iconName="Micah Baca" />
+        <MyHeader
+          classChat="classChat"
+          iconName="Micah Baca"
+          HeaderBackgroundColor={this.state.headerBackgroundColor}
+        />
         {/* Leftnav */}
         <main style={mainStyle.style}>
           <section style={navStyles.container}>
