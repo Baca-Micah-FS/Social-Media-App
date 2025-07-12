@@ -1,60 +1,101 @@
 import React, { Component } from "react";
 import "./App.css";
 // React Components
-// import Header from "./components/Header";
 import MyHeader from "./components/MyHeader";
 import LeftNav from "./components/Leftnav";
-// import PostButton from "./components/PostButton";
 import MyForm from "./components/MyForm";
 import MyAds from "./components/MyAds";
 import ComponentMeme from "./images/ComponentMeme.webp";
 import MyPostCard from "./components/MyPostCard";
 import AvatarImg from "./images/Avatar-Photo.jpg";
-
 // import images
-// import AvatarIcon from "./images/Avatar-Photo.jpg";
-// import MyAvatar from "./components/MyAvatar";
 import AdPhoto from "./images/acmead.jpg";
 import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
-
-// REACT ICONS
-// import { FcSettings } from "react-icons/fc";
-// import { FaSearch } from "react-icons/fa";
-// import { CgBoy } from "react-icons/cg";
 
 class App extends Component {
   state = {
     postList: [
       {
+        id: 1,
         avatar: AvatarImg,
         postName: "Interface Programming",
         postDescription:
           "If you look closely, developing is still in your future.",
+        postImage: ComponentMeme,
+        imageAlt: "Component Meme",
+        isEditing: false,
+        originalPostName: "",
+        originalPostDescription: "",
       },
     ],
   };
 
   addItem = (postName, postDescription) => {
+    const newId = this.state.postList.sort((a, b) => b.id - a.id)[0].id + 1;
     this.setState({
       postList: [
         ...this.state.postList,
-        { avatar: AvatarImg, postName, postDescription },
+        { id: newId, avatar: AvatarImg, postName, postDescription },
       ],
     });
   };
 
-  removeItem = (postName, postDescription) => {
+  removeItem = (id) => {
     this.setState({
       postList: this.state.postList.filter((post) => {
-        if (
-          post.postName !== postName &&
-          post.postDescription !== postDescription
-        ) {
+        if (post.id !== id) {
           return true;
         }
         return false;
       }),
     });
+  };
+
+  onHeaderChange = (id, newText) => {
+    const updatedPost = this.state.postList.map((post) => {
+      if (post.id === id) {
+        return { ...post, postName: newText };
+      }
+      return post;
+    });
+    this.setState({ postList: updatedPost });
+  };
+
+  onParagraphChange = (id, newText) => {
+    const updateParagraph = this.state.postList.map((post) => {
+      if (post.id === id) {
+        return { ...post, postDescription: newText };
+      }
+      return post;
+    });
+    this.setState({ postList: updateParagraph });
+  };
+
+  toggleEdit = (id, isEditing) => {
+    const editUpdate = this.state.postList.map((post) => {
+      if (post.id === id) {
+        post.originalPostName = post.postName;
+        post.originalPostDescription = post.postDescription;
+        return { ...post, isEditing: isEditing };
+      }
+      return post;
+    });
+    this.setState({ postList: editUpdate });
+  };
+
+  discardEdits = (id) => {
+    const discardUpdate = this.state.postList.map((post) => {
+      if (post.id === id) {
+        return {
+          ...post,
+          postName: post.originalPostName,
+          postDescription: post.originalPostDescription,
+          isEditing: false,
+        };
+      }
+      return post;
+    });
+    this.setState({ postList: discardUpdate });
   };
 
   render() {
@@ -70,17 +111,26 @@ class App extends Component {
           {/* Post Card Section */}
           <section style={formStyles.style}>
             <MyForm addFunction={this.addItem} />
-            {this.state.postList.map((item) => {
-              return (
-                <MyPostCard
-                  PostDescription={item.postDescription}
-                  CardHeader={item.postName}
-                  avatarImage={item.avatar}
-                  key={`${item.postName}-${item.postDescription}`}
-                  removeItem={this.removeItem}
-                />
-              );
-            })}
+            {this.state.postList
+              .sort((a, b) => b.id - a.id)
+              .map((item) => {
+                return (
+                  <MyPostCard
+                    Id={item.id}
+                    PostDescription={item.postDescription}
+                    CardHeader={item.postName}
+                    AvatarImage={item.avatar}
+                    RemoveItem={this.removeItem}
+                    ImgUrl={item.postImage}
+                    ImageAlt={item.imageAlt}
+                    IsEditing={item.isEditing}
+                    OnHeaderChange={this.onHeaderChange}
+                    OnParagraphChange={this.onParagraphChange}
+                    ToggleEdit={this.toggleEdit}
+                    DiscardEdit={this.discardEdits}
+                  />
+                );
+              })}
 
             {/* <PostButton btnText="Post Something" />
             <div></div> */}
@@ -109,8 +159,6 @@ class App extends Component {
 }
 
 export default App;
-
-//simplify style variables into one "styles" then nest each components styles
 
 const mainStyle = {
   style: {

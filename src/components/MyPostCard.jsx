@@ -1,43 +1,134 @@
-// import React from "react";
-
 import MyIcon from "./MyIcons";
-
-import ImageUrl from "../images/Avatar-Photo.jpg";
-
 import { TiDelete } from "react-icons/ti";
-
-import ComponentMeme from "../images/ComponentMeme.webp";
-
+import { LuSaveOff } from "react-icons/lu";
+import { FaSave } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
 const MyPostCard = (props) => {
   return (
-    // <div>
-    <form style={styles.myForm}>
-      <div style={styles.formLineTwo}>
-        <div style={styles.avatarAndInput}>
-          <MyIcon IconImg={props.avatarImage} ImageAlt="Image Icon" />
+    //TODO figure out which one I like better ??
+    //TODO fix styles on the inputs
+    <div>
+      {props.IsEditing ? (
+        <form style={styles.myForm}>
+          <div style={styles.formLineTwo}>
+            <div style={styles.avatarAndInput}>
+              <MyIcon IconImg={props.AvatarImage} ImageAlt="Image Icon" />
+              <input
+                onChange={(e) => props.OnHeaderChange(props.Id, e.target.value)}
+                value={props.CardHeader}
+                type="text"
+              />
+            </div>
+            <button
+              onClick={() => props.ToggleEdit(props.Id, false)}
+              type="button"
+              style={styles.button}
+            >
+              <FaSave style={styles.buttonIcon} />
+            </button>
+            <button
+              onClick={() => props.DiscardEdit(props.Id)}
+              type="button"
+              style={styles.button}
+            >
+              <LuSaveOff style={styles.buttonIcon} />
+            </button>
+          </div>
+          <input
+            onChange={(e) => props.OnParagraphChange(props.Id, e.target.value)}
+            value={props.PostDescription}
+            type="text"
+          />
+        </form>
+      ) : (
+        <form style={styles.myForm}>
+          <div style={styles.formLineTwo}>
+            <div style={styles.avatarAndInput}>
+              <MyIcon IconImg={props.AvatarImage} ImageAlt="Image Icon" />
+              <h3 style={styles.postCardHeader}>{props.CardHeader}</h3>
+            </div>
+            <button
+              onClick={() => props.ToggleEdit(props.Id, true)}
+              type="button"
+              style={styles.button}
+            >
+              <MdEdit style={styles.buttonIcon} />
+            </button>
+            <button
+              onClick={() => props.RemoveItem(props.Id)}
+              type="button"
+              style={styles.button}
+            >
+              <TiDelete style={styles.buttonIcon} />
+            </button>
+          </div>
+          <p style={styles.postDescription}> {props.PostDescription}</p>
+          <img src={props.ImgUrl} alt={props.ImageAlt}></img>
+        </form>
+      )}
+    </div>
 
-          {/* CHANGE FONT SIZE, COLOR PALLETS, PADDING TO ADS AND EDIT BUTTON */}
-          <h3 style={styles.postCardHeader}>{props.CardHeader}</h3>
-        </div>
-        <button type="button" style={styles.button}>
-          <MdEdit style={styles.buttonIcon} />
-        </button>
-        <button
-          onClick={() =>
-            props.removeItem(props.CardHeader, props.PostDescription)
-          }
-          type="button"
-          style={styles.button}
-        >
-          <TiDelete style={styles.buttonIcon} />
-        </button>
-      </div>
-      <p style={styles.postDescription}>{props.PostDescription}</p>
-      {/* <img src={props.ImgUrl} alt={props.ImageAlt}></img> */}
-    </form>
-    // </div>
+    // <form style={styles.myForm}>
+    //   <div style={styles.formLineTwo}>
+    //     <div style={styles.avatarAndInput}>
+    //       <MyIcon IconImg={props.AvatarImage} ImageAlt="Image Icon" />
+    //       {props.IsEditing ? (
+    //         <input
+    //           onChange={(e) => props.OnHeaderChange(props.Id, e.target.value)}
+    //           value={props.CardHeader}
+    //           type="text"
+    //         />
+    //       ) : (
+    //         <h3 style={styles.postCardHeader}>{props.CardHeader}</h3>
+    //       )}
+    //     </div>
+    //     {props.IsEditing ? (
+    //       <button
+    //         onClick={() => props.ToggleEdit(props.Id, false)}
+    //         type="button"
+    //         style={styles.button}
+    //       >
+    //         <FaSave style={styles.buttonIcon} />
+    //       </button>
+    //     ) : (
+    //       <button
+    //         onClick={() => props.ToggleEdit(props.Id, true)}
+    //         type="button"
+    //         style={styles.button}
+    //       >
+    //         <MdEdit style={styles.buttonIcon} />
+    //       </button>
+    //     )}
+    //     {props.IsEditing ? (
+    //       <button
+    //         onClick={() => props.DiscardEdit(props.Id)}
+    //         type="button"
+    //         style={styles.button}
+    //       >
+    //         <LuSaveOff style={styles.buttonIcon} />
+    //       </button>
+    //     ) : (
+    //       <button
+    //         onClick={() => props.RemoveItem(props.Id)}
+    //         type="button"
+    //         style={styles.button}
+    //       >
+    //         <TiDelete style={styles.buttonIcon} />
+    //       </button>
+    //     )}
+    //   </div>
+    //   {props.IsEditing ? (
+    //     <input
+    //       onChange={(e) => props.OnParagraphChange(props.Id, e.target.value)}
+    //       value={props.PostDescription}
+    //       type="text"
+    //     />
+    //   ) : (
+    //     <p style={styles.postDescription}> {props.PostDescription}</p>
+    //   )}
+    //   <img src={props.ImgUrl} alt={props.ImageAlt}></img>
+    // </form>
   );
 };
 
@@ -103,4 +194,5 @@ const styles = {
     fontSize: "17px",
     marginLeft: "10px",
   },
+  postHeaderEditable: {},
 };
