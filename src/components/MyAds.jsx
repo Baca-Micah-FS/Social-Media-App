@@ -18,6 +18,8 @@ const styles = {
     cursor: "pointer",
     marginLeft: "5%",
     marginTop: "15px",
+    color: "rgba(163, 173, 194)",
+    boxShadow: "5px 5px 5px 5px",
   },
   adTitle: {
     fontSize: "30px",

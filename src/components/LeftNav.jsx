@@ -1,22 +1,29 @@
+import { Link } from "react-router";
+
 const LeftNav = (props) => {
   return (
     <nav style={style.header}>
       <ul style={style.lists}>
         <div style={style.lists}>
           <li>
-            <a style={style.lists} href="#newsFeed">
+            <Link style={style.lists} to="/">
+              {props.Dashboard}
+            </Link>
+          </li>
+          <li>
+            <Link style={style.lists} to="/Newsfeed">
               {props.NewsFeed}
-            </a>
+            </Link>
           </li>
           <li>
-            <a style={style.lists} href="#messages">
+            <Link style={style.lists} to="/Messages">
               {props.Messages}
-            </a>
+            </Link>
           </li>
           <li>
-            <a style={style.lists} href="#watch">
-              {props.Watch}
-            </a>
+            <Link style={style.lists} to="/Settings">
+              {props.Settings}
+            </Link>
           </li>
         </div>
       </ul>

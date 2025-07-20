@@ -7,11 +7,8 @@ import MyIcons from "./MyIcons";
 //<FaSearch />
 import { FaSearch } from "react-icons/fa";
 
-//<FaArrowRight />
-import { FaArrowRight } from "react-icons/fa";
-
-// <CgBoy />
-import { CgBoy } from "react-icons/cg";
+//Pages
+import { Link } from "react-router";
 
 // <IoIosNotifications />
 import { IoIosNotifications } from "react-icons/io";
@@ -26,7 +23,7 @@ const MyHeader = (props) => {
   const styles = {
     myHeader: {
       padding: "14",
-      backgroundColor: props.HeaderBackgroundColor,
+      backgroundColor: "black",
       color: "rgb(163, 173, 194)",
       display: "flex",
       flexDirection: "row",
@@ -92,6 +89,9 @@ const MyHeader = (props) => {
     },
     iconAvatar: {
       marginRight: "10px",
+      marginLeft: "10px",
+      marginTop: "9px",
+      width: "20px",
     },
   };
 
@@ -109,20 +109,19 @@ const MyHeader = (props) => {
         </span>
         <input type="text" style={styles.inputwithIcon} placeholder="Search" />
       </div>
-
       <div style={styles.rightSide}>
-        <div style={styles.myIcon}>
-          <div style={styles.iconAvatar}>
-            <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
-          </div>
-          <h3>{props.iconName}</h3>
-        </div>
+        <div style={styles.myIcon}></div>
         <button style={styles.rightIcons}>
           <IoIosNotifications size={25} />
         </button>
         <button style={styles.rightIcons}>
           <FcSettings size={25} />
         </button>
+        <div style={styles.iconAvatar}>
+          <Link to="/Settings">
+            <MyIcons IconImg={ImageUrl} ImageAlt="Image Icon" />
+          </Link>
+        </div>
       </div>
     </header>
   );
