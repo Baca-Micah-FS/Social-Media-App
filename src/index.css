@@ -1,11 +1,31 @@
+/* 
+
+coolors.com color pallete
+
+--primary-color: 
+
+--secondary-color: #0d1b2a (Nav font, header background, Ads font)
+
+--accent-color: #e0e1dd(ad background color, post inputs) 
+
+--secondary-accent-color: rgba(163, 173, 194) (box shadowing)
+                
+
+--button/icon-color: #778da9 (button, icons, and class chat header)
+
+Fonts: Open Sans(Nav headers inputs, Ad Descriptions)
+        
+        Roboto(Ad Title)
+*/
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +45,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
