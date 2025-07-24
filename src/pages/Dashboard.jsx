@@ -40,12 +40,12 @@ const styles = {
     marginTop: "20px",
     margin: "auto",
     padding: "32px",
-    margin: "20px",
+    // margin: "20px",
     borderRadius: "5%",
   },
   header: {
     marginLeft: "30px",
     fontSize: "45px",
-    marginLeft: "10px",
+    // marginLeft: "10px",
   },
 };

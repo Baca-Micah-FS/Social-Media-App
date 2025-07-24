@@ -9,4 +9,4 @@ function Settings() {
 
 export default Settings;
 
-const styles = {};
+// const styles = {};

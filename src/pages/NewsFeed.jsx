@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 // React Components
-import MyHeader from "../components/MyHeader";
-import LeftNav from "../components/Leftnav";
+// import MyHeader from "../components/MyHeader";
+// import LeftNav from "../components/Leftnav";
 import MyForm from "../components/MyForm";
-import MyAds from "../components/MyAds";
+// import MyAds from "../components/MyAds";
 import ComponentMeme from "../images/ComponentMeme.webp";
 import MyPostCard from "../components/MyPostCard";
 import AvatarImg from "../images/Avatar-Photo.jpg";
 // import images
-import AdPhoto from "../images/acmead.jpg";
-import AcmeCoffeeAd from "../images/acmeCoffeeAd.jpeg";
+// import AdPhoto from "../images/acmead.jpg";
+// import AcmeCoffeeAd from "../images/acmeCoffeeAd.jpeg";
 
 class NewsFeed extends Component {
   state = {
