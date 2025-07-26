@@ -1,3 +1,5 @@
+// My Icon component responsible for Profile pic imported on app.jsx
+
 import React from "react";
 
 const MyIcons = (props) => {

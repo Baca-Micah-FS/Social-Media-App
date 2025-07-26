@@ -1,3 +1,6 @@
+//Component for Avatar/Profile Pic used in header and Newsfeed.
+//Profile Pic links to Settings page
+
 import React from "react";
 
 const MyAvatar = (props) => {

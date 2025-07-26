@@ -1,4 +1,4 @@
-// import React from "react";
+// Post Button located on the top post card for creating a new post
 
 const PostButton = (props) => {
   return (

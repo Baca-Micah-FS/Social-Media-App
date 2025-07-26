@@ -1,16 +1,12 @@
-import React, { Component } from "react";
+// Form Component for Newsfeed contains container for post and input for new post
+
+import React from "react";
 
 import MyIcons from "./MyIcons";
 
 import ImageUrl from "../images/Avatar-Photo.jpg";
 
 import PostButton from "./PostButton";
-
-import { CgBoy } from "react-icons/cg";
-
-//<PiPencilCircleFill />
-import { PiPencilCircleFill } from "react-icons/pi";
-import MyPostCard from "./MyPostCard";
 
 const MyForm = (props) => {
   function handleAd(e) {
@@ -29,7 +25,6 @@ const MyForm = (props) => {
         name="postHeader"
         type="text"
         style={styles.postInput}
-        // onChange={this.changeInputText}
         placeholder="Post Title"
       />
       <br></br>
@@ -42,10 +37,8 @@ const MyForm = (props) => {
             name="postDescription"
             type="text"
             style={styles.descriptionInput}
-            // onChange={this.changeInputText}
             placeholder="What did you learn this week?"
           ></input>
-          {/* <p>Post: {this.state.databinding}</p> */}
         </div>
         <div style={styles.button}>
           <PostButton btnText="Post" />

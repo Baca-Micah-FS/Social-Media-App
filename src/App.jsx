@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route, Routes } from "react-router";
 import "./App.css";
 // Pages
@@ -6,15 +6,12 @@ import Dashboard from "./pages/Dashboard";
 import Messages from "./pages/Messages";
 import NewsFeed from "./pages/NewsFeed";
 import Settings from "./pages/Settings";
+import Reminder from "./components/Reminder";
 
 // React Components
 import MyHeader from "./components/MyHeader";
 import LeftNav from "./components/Leftnav";
-import MyForm from "./components/MyForm";
 import MyAds from "./components/MyAds";
-import ComponentMeme from "./images/ComponentMeme.webp";
-import MyPostCard from "./components/MyPostCard";
-import AvatarImg from "./images/Avatar-Photo.jpg";
 // import images
 import AdPhoto from "./images/acmead.jpg";
 import AcmeCoffeeAd from "./images/acmeCoffeeAd.jpeg";
@@ -32,18 +29,26 @@ function App() {
             NewsFeed="NewsFeed"
             Messages="Messages"
             Settings="Settings"
+            News="News"
           />
         </section>
-        {/* Post Card Section */}
+        {/* Navigational Routes for Left Navigation */}
         <section style={formStyles.style}>
           <Routes>
             <Route path="/NewsFeed" element={<NewsFeed />} />
             <Route path="/" element={<Dashboard Dashboard="Dashboard" />} />
-            <Route path="/Messages" element={<Messages />} />
-            <Route path="/Settings" element={<Settings />} />
+            <Route
+              path="/Messages"
+              element={<Messages Messages="Messages" />}
+            />
+            <Route
+              path="/Settings"
+              element={<Settings Settings="Settings" />}
+            />
+            <Route path="/Reminder" element={<Reminder />} />
           </Routes>
         </section>
-
+        {/* My Ads Section */}
         <div style={asideStyle.style}>
           <aside>
             <MyAds

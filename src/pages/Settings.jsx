@@ -1,14 +1,15 @@
+// Settings page containing random user generated API. Profile Pic icon in header will link to this page
+
 import { useState, useEffect } from "react";
 import SettingsForm from "../components/SettingsForm";
 
-function Settings() {
+function Settings(props) {
   const [userData, setuserData] = useState(null);
 
   useEffect(() => {
     async function FetchAPI() {
       const response = await fetch("https://randomuser.me/api/");
       const data = await response.json();
-      // data.results is targeting the 'results' from the API
       const [user] = data.results;
       setuserData(user);
     }
@@ -17,7 +18,7 @@ function Settings() {
 
   return (
     <section>
-      <h1>Settings</h1>
+      <h1 style={styles.h1}>{props.Settings}</h1>
       <div>
         {userData && (
           <SettingsForm
@@ -30,7 +31,6 @@ function Settings() {
             city={userData.location.city}
             state={userData.location.state}
             zipcode={userData.location.postcode}
-            // email={userData.email}
             phone={userData.phone}
           />
         )}
@@ -41,4 +41,8 @@ function Settings() {
 
 export default Settings;
 
-// const styles = {};
+const styles = {
+  h1: {
+    paddingLeft: "25px",
+  },
+};

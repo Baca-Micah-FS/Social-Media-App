@@ -1,3 +1,5 @@
+//Ad Component displaying all adds on right side
+
 import React from "react";
 
 const MyAds = (props) => {

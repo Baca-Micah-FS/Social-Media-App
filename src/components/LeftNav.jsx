@@ -1,3 +1,5 @@
+//Navigation Bar containing Dashboard, Newsfeed, Messages, Settings, and News pages
+
 import { Link } from "react-router";
 
 const LeftNav = (props) => {
@@ -23,6 +25,11 @@ const LeftNav = (props) => {
           <li>
             <Link style={style.lists} to="/Settings">
               {props.Settings}
+            </Link>
+          </li>
+          <li>
+            <Link style={style.lists} to="/Reminder">
+              {props.News}
             </Link>
           </li>
         </div>

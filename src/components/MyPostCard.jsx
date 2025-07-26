@@ -1,3 +1,5 @@
+// Post Card Component containing original post on load and is the container for any added posts
+
 import MyIcon from "./MyIcons";
 import { TiDelete } from "react-icons/ti";
 import { LuSaveOff } from "react-icons/lu";

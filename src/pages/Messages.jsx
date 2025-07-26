@@ -1,7 +1,9 @@
-function Messages() {
+// Messages Page containing future content to track messages across users
+
+function Messages(props) {
   return (
     <section>
-      <h1>Messages</h1>
+      <h1 style={styles.messages}>{props.Messages}</h1>
       <p></p>
     </section>
   );
@@ -9,4 +11,8 @@ function Messages() {
 
 export default Messages;
 
-// const styles = {};
+const styles = {
+  messages: {
+    padding: "15px",
+  },
+};

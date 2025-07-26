@@ -1,3 +1,5 @@
+// Dashboard page makes up the root of the application on load displaying charts tracking post activity across application
+
 import React, { useState } from "react";
 import PostsPerDay from "../recharts/postsPerDay";
 import PostActivityHourly from "../recharts/postActivityHourly";
@@ -40,12 +42,10 @@ const styles = {
     marginTop: "20px",
     margin: "auto",
     padding: "32px",
-    // margin: "20px",
     borderRadius: "5%",
   },
   header: {
     marginLeft: "30px",
     fontSize: "45px",
-    // marginLeft: "10px",
   },
 };

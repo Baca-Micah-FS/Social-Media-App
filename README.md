@@ -25,3 +25,23 @@ Cleaned up styling and blank spaces in code.
 Cleaned up unused componenets and/or icons
 
 Added componentDidMount to change header background color after 1.5 setTimeOut
+
+# Week 3
+
+Updated Dashboard to be on render page. Added charts from my charts.
+
+Updated anchor and button elements to be <Route /> and <Link /> components.
+
+Added hooks and changed App.jsx to function
+
+# Week 4
+
+Added a random user generator API to settings and linked profile icon in header to link to page.
+
+Added a News Page linking an API to fetch news headlines. Linked envelope icon in header to link to News Page
+
+Linked Notification bell in header to link to settings page.
+
+Cleaned up all code deleting unused imports and componenets and commented necessary code explaining production
+
+Fixed bug where if no posts were present that you could still add a post

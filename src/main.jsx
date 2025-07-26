@@ -1,5 +1,7 @@
+// Main root of application importing root, router, and app.jsx
+
 import React from "react";
-import { BrowserRouter, RouterProvider } from "react-router";
+import { BrowserRouter } from "react-router";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

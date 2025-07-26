@@ -1,15 +1,10 @@
+// NewsFeed  Page containing Form and Postcard components where users can add, edit, delete, and save new posts to this page
+
 import React, { Component } from "react";
-// React Components
-// import MyHeader from "../components/MyHeader";
-// import LeftNav from "../components/Leftnav";
 import MyForm from "../components/MyForm";
-// import MyAds from "../components/MyAds";
 import ComponentMeme from "../images/ComponentMeme.webp";
 import MyPostCard from "../components/MyPostCard";
 import AvatarImg from "../images/Avatar-Photo.jpg";
-// import images
-// import AdPhoto from "../images/acmead.jpg";
-// import AcmeCoffeeAd from "../images/acmeCoffeeAd.jpeg";
 
 class NewsFeed extends Component {
   state = {
@@ -31,7 +26,13 @@ class NewsFeed extends Component {
   };
 
   addItem = (postName, postDescription) => {
-    const newId = this.state.postList.sort((a, b) => b.id - a.id)[0].id + 1;
+    // Fixed bug where if no posts were present that you could still add a post
+    let newId;
+    if (this.state.postList.length > 0) {
+      newId = this.state.postList.sort((a, b) => b.id - a.id)[0].id + 1;
+    } else {
+      newId = 1;
+    }
     this.setState({
       postList: [
         ...this.state.postList,
@@ -136,34 +137,3 @@ class NewsFeed extends Component {
 }
 
 export default NewsFeed;
-
-const mainStyle = {
-  style: {
-    display: "flex",
-    flexDirection: "row",
-  },
-};
-
-const asideStyle = {
-  style: {
-    width: "20%",
-    backgroundColor: "#e0e1dd",
-  },
-};
-
-const formStyles = {
-  style: {
-    width: "60%",
-    backgroundColor: "lightgrey",
-  },
-};
-
-const navStyles = {
-  container: {
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    height: "100vh",
-    width: "20%",
-  },
-};

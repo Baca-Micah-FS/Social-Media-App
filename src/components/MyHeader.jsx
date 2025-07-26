@@ -1,8 +1,13 @@
+// Header component conaining search bar navigation, Notification Icon linking to News Page, Envelope Icon linking to Messages Page, and Profile pic linking to settings page
+
 import React from "react";
 
 import ImageUrl from "../images/Avatar-Photo.jpg";
 
 import MyIcons from "./MyIcons";
+
+//<FaEnvelope />
+import { FaEnvelope } from "react-icons/fa";
 
 //<FaSearch />
 import { FaSearch } from "react-icons/fa";
@@ -15,9 +20,6 @@ import { IoIosNotifications } from "react-icons/io";
 
 //<PiPencilCircleFill />
 import { PiPencilCircleFill } from "react-icons/pi";
-
-//<FcSettings />
-import { FcSettings } from "react-icons/fc";
 
 const MyHeader = (props) => {
   const styles = {
@@ -41,10 +43,8 @@ const MyHeader = (props) => {
       height: "100px",
       width: "100px",
       marginRight: "10%",
-      // backgroundColor: "white",
       alignItems: "center",
       paddingTop: ".3rem",
-      // marginTop: ".55rem",
       color: "#778da9",
     },
     searchCont: {
@@ -69,9 +69,7 @@ const MyHeader = (props) => {
     },
     rightSide: {
       display: "flex",
-
       flexDirection: "row",
-
       alignItems: "center",
       marginRight: "2%",
     },
@@ -112,10 +110,14 @@ const MyHeader = (props) => {
       <div style={styles.rightSide}>
         <div style={styles.myIcon}></div>
         <button style={styles.rightIcons}>
-          <IoIosNotifications size={25} />
+          <Link to={"/Reminder"}>
+            <IoIosNotifications size={25} />
+          </Link>
         </button>
         <button style={styles.rightIcons}>
-          <FcSettings size={25} />
+          <Link to={"/Messages"}>
+            <FaEnvelope size={25} />
+          </Link>
         </button>
         <div style={styles.iconAvatar}>
           <Link to="/Settings">
