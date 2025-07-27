@@ -45,7 +45,16 @@ function App() {
               path="/Settings"
               element={<Settings Settings="Settings" />}
             />
-            <Route path="/Reminder" element={<Reminder />} />
+            <Route
+              path="/Reminder"
+              element={
+                <Reminder
+                  News="Today's News"
+                  Readmore="Readmore"
+                  LoadingHeadline="Loading Headline"
+                />
+              }
+            />
           </Routes>
         </section>
         {/* My Ads Section */}

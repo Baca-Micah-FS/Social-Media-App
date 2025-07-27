@@ -45,3 +45,5 @@ Linked Notification bell in header to link to settings page.
 Cleaned up all code deleting unused imports and componenets and commented necessary code explaining production
 
 Fixed bug where if no posts were present that you could still add a post
+
+Re-checked application and changed all statically placed elements to be passed as props dynamically.

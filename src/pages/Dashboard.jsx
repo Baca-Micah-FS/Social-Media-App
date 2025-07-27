@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import PostsPerDay from "../recharts/postsPerDay";
 import PostActivityHourly from "../recharts/postActivityHourly";
 
-function Dashboard() {
+function Dashboard(props) {
   const [postsPerDay] = useState([{ chartHeader: "Average posts per day" }]);
   const [postActivityHourly] = useState([
     { chartHeader: "Average posts per hour" },
   ]);
   return (
     <section>
-      <h1 style={styles.header}>Dashboard</h1>
+      <h1 style={styles.header}>{props.Dashboard}</h1>
       <div>
         {postsPerDay.map((postsPerDay, id) => (
           <PostsPerDay key={id} id={id} postsPerDay={postsPerDay} />

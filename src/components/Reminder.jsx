@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-function NewsHeadline() {
+function NewsHeadline(props) {
   const [headline, setHeadline] = useState(null);
 
   useEffect(() => {
@@ -11,17 +11,19 @@ function NewsHeadline() {
         "https://newsdata.io/api/1/news?apikey=pub_a4cbb42768d041a282243548c011de2b&country=us&language=en&category=top&size=1"
       );
       const data = await response.json();
-      setHeadline(data.results[0]);
+      setTimeout(() => {
+        setHeadline(data.results[0]);
+      }, 900);
     }
     fetchNews();
   }, []);
 
   return (
     <section style={styles.container}>
-      <h1>Today's News</h1>
+      <h1>{props.News}</h1>
       {headline ? (
         <div>
-          <h2 style={styles.paragraph}>{headline.title}</h2>
+          <h2 style={styles.header}>{headline.title}</h2>
           <p style={styles.paragraph}>{headline.description}</p>
           <a
             style={styles.readMore}
@@ -29,11 +31,11 @@ function NewsHeadline() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read more
+            {props.Readmore}
           </a>
         </div>
       ) : (
-        <p>Loading Headline</p>
+        <p style={styles.loadingHeadline}>{props.LoadingHeadline}</p>
       )}
     </section>
   );
@@ -53,12 +55,22 @@ const styles = {
     boxShadow: "5px 5px rgba(163, 173, 194)",
   },
 
+  header: {
+    paddingLeft: "15px",
+  },
   paragraph: {
     paddingLeft: "15px",
+    fontSize: "18px",
+    fontStyle: "italic",
   },
   readMore: {
     paddingLeft: "15px",
     color: " #778da9",
     fontWeight: "bold",
+  },
+  loadingHeadline: {
+    marginRight: "8rem",
+    fontSize: "30px",
+    fontStyle: "italic",
   },
 };
