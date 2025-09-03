@@ -111,6 +111,7 @@ class NewsFeed extends Component {
     return (
       <>
         <MyForm addFunction={this.addItem} />
+
         {this.state.postList
           .sort((a, b) => b.id - a.id)
           .map((item) => {
